@@ -1,0 +1,288 @@
+:root {
+  --purple: rgb(167, 41, 245);
+  --light-purple: #f6e7ff;
+  --primary-color: #313e51;
+  --navy: #3b4d66;
+  --grey-navy: #626c7f;
+  --light-blush: #abc1e1;
+  --light-gray: #f4f6fa;
+  --pure-white: #ffffff;
+  --green: #26d782;
+  --red: #ee5454;
+}
+[data-theme="dark"] {
+  --purple: rgb(167, 41, 245);
+  --primary-color: #ffffff;
+  --light-purple: #f6e7ff;
+  --navy: #3b4d66;
+  --grey-navy: #626c7f;
+  --light-blush: #abc1e1;
+  --light-gray: #f4f6fa;
+  --green: #26d782;
+  --red: #ee5454;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+/* Font Faces */
+
+@font-face {
+  font-family: "Rubik";
+  src: url("/starter-code/assets/fonts/static/Rubik-Italic.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: italic;
+  text-align: left;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("/starter-code/assets/fonts/static/Rubik-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  text-align: left;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("/starter-code/assets/fonts/static/Rubik-Medium.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  text-align: left;
+}
+
+/* End of Font Faces */
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+/* Typography */
+
+.display {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 9rem;
+  line-height: 6.25rem;
+  color: var(--primary-color);
+}
+
+h1 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 4rem;
+  color: var(--primary-color);
+}
+
+h1.regular {
+  font-weight: 100;
+  font-style: normal;
+}
+
+h2 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2.25rem;
+  color: var(--primary-color);
+}
+
+h2.thin {
+  font-weight: 100;
+  font-style: normal;
+}
+
+h3 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.125rem;
+  color: var(--primary-color);
+}
+
+.body-m {
+  font-family: "Rubik", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  color: var(--primary-color);
+}
+
+.body-s {
+  font-family: "Rubik", sans-serif;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  color: var(--primary-color);
+}
+
+/* End of Typography */
+
+/* Buttons */
+
+button {
+  width: 100%;
+  height: 56px;
+  padding: 0.75rem;
+  background-color: var(--purple);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  transition-duration: 0.4s;
+  border: none;
+  border-radius: 12px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgba(167, 41, 245, 0.5);
+}
+
+button h3 {
+  color: var(--pure-white);
+}
+
+/* End of buttons */
+
+/* List item */
+li {
+  list-style: none;
+}
+
+li button {
+  display: flex;
+  flex: 1;
+  background-color: var(--pure-white);
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  column-gap: 2rem;
+}
+
+.answer-option {
+  background-color: var(--light-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+li button h3 {
+  color: var(--primary-color);
+}
+
+li button:hover {
+  background-color: var(--pure-white);
+}
+
+li button:hover:nth-child(0) {
+  background-color: var(--light-purple);
+}
+
+.active {
+  border: 3px solid var(--purple);
+}
+
+.answer-option-active {
+  background-color: var(--purple);
+}
+
+.answer-option-active h3 {
+  color: var(--pure-white);
+}
+
+.correct {
+  border-color: var(--green);
+}
+
+.wrong {
+  border-color: var(--red);
+}
+
+/* End of List items */
+
+/* Switch toggle */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1.75rem;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--purple);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--pure-white);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--purple);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--purple);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* End of Switch toggle */
+
+/* Bg */
+.theme-bg {
+  background-color: var(--light-gray);
+  background-image: url("../assets/images/pattern-background-mobile-light.svg");
+  height: 100dvh;
+}

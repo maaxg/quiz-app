@@ -1,48 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Frontend quiz app</title>
-</head>
-<body>
-
-  <!-- Quiz menu start -->
-
-  Welcome to the Frontend Quiz!
-  Pick a subject to get started.
-
-  HTML
-  CSS
-  JavaScript
-  Accessibility
-
-  <!-- Quiz menu end -->
-
-  <!-- Quiz question start -->
-
-  Question <!-- number --> of 10
-
-  A
-  B
-  C
-  D
-
-  Submit answer
-
-  <!-- Quiz question end -->
-
-  <!-- Quiz completed start -->
-
-  Quiz completed
-  You scored...
-
-  <!-- score --> out of 10
-
-  <!-- Quiz completed end -->
-
-</body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <title>Quiz app</title>
+  </head>
+  <body>
+    <div class="theme-bg">
+      <header>
+        <nav class="nav-container">
+          <img src="./assets/images/icon-sun-dark.svg" />
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+          <img src="./assets/images/icon-moon-dark.svg" />
+        </nav>
+      </header>
+      <main>
+        <div class="container">
+          <div>
+            <h2 class="thin">Welcome to the <strong>Frontend Quiz!</strong></h2>
+            <p class="body-m">Pick a subject to get started.</p>
+          </div>
+          <ul class="subject-container">
+            <li>
+              <button id="html">
+                <div class="answer-option html-quiz">
+                  <img
+                    src="./assets/images/icon-html.svg"
+                    style="width: 28px; height: 28px"
+                  />
+                </div>
+                <h3>HTML</h3>
+              </button>
+            </li>
+            <li>
+              <button id="css">
+                <div class="answer-option css-quiz">
+                  <img
+                    src="./assets/images/icon-css.svg"
+                    style="width: 28px; height: 28px"
+                  />
+                </div>
+                <h3>CSS</h3>
+              </button>
+            </li>
+            <li>
+              <button id="js">
+                <div class="answer-option js-quiz">
+                  <img
+                    src="./assets/images/icon-js.svg"
+                    style="width: 28px; height: 28px"
+                  />
+                </div>
+                <h3>Javascript</h3>
+              </button>
+            </li>
+            <li>
+              <button id="accessibility">
+                <div class="answer-option accessibility-quiz">
+                  <img
+                    src="./assets/images/icon-accessibility.svg"
+                    style="width: 28px; height: 28px"
+                  />
+                </div>
+                <h3>Accessibility</h3>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </main>
+    </div>
+    <script src="./js/home.js"></script>
+  </body>
 </html>

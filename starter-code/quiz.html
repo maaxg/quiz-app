@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/quiz.css" />
+    <title>Quiz</title>
+  </head>
+  <body class="theme-bg">
+    <header>
+      <nav class="nav-container">
+        <div class="header-left">
+          <div id="quiz-icon-container" class="quiz-icon">
+            <img id="quiz-icon" />
+          </div>
+          <h3 id="quiz-title"></h3>
+        </div>
+        <div class="header-right">
+          <img src="./assets/images/icon-sun-dark.svg" />
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+          <img src="./assets/images/icon-moon-dark.svg" />
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div id="question-container" class="question-container">
+        <div class="question-prompt-gap">
+          <p id="number-of-questions" class="body-m"></p>
+          <h3 id="prompt"></h3>
+        </div>
+        <div class="progress-bar-container">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+
+        <ul id="options-container" class="options-container"></ul>
+
+        <button id="submit-answer" type="submit">
+          <h3>Submit answer</h3>
+        </button>
+        <div class="select-an-answer-container" id="select-an-answer">
+          <img src="./assets/images/icon-error.svg" />
+          <h3 style="color: var(--red)">Please select an answer</h3>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="./js/quiz.js"></script>
+  </body>
+</html>
