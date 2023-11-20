@@ -67,7 +67,7 @@ function getQuizTitle(title, icon) {
 }
 
 function getQuestions() {
-  fetch("/starter-code/data.json")
+  fetch("/data.json")
     .then(async (response) => {
       return response.json();
     })

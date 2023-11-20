@@ -9,32 +9,52 @@ let currentTheme = localStorage.getItem("theme")
 
 function getBackgroundImage(theme) {
   if (window.outerWidth < 767)
-    return `url('./assets/images/pattern-background-mobile-${theme}.svg')`;
-  return `url('./assets/images/pattern-background-desktop-${theme}.svg')`;
+    return `url('./assets/images/pattern-background-mobile-${
+      theme === "light" ? "dark" : "light"
+    }.svg')`;
+  return `url('./assets/images/pattern-background-desktop-${
+    theme === "light" ? "dark" : "light"
+  }.svg')`;
 }
 
-function toggleTheme() {
+function defineIcons(theme) {
+  iconSun.src = `./assets/images/icon-sun-${theme}.svg`;
+  iconMoon.src = `./assets/images/icon-moon-${theme}.svg`;
+}
+
+function initiateTheme() {
+  document?.documentElement.setAttribute("data-theme", currentTheme);
+  localStorage.setItem("theme", currentTheme);
+  toggleThemeButton.checked = currentTheme === "light" ? false : true;
   if (currentTheme === "light") {
-    document?.documentElement.setAttribute("data-theme", "dark");
-    localStorage.setItem("theme", "dark");
-    currentTheme = "dark";
-    toggleThemeButton.checked = true;
-    iconSun.src = "./assets/images/icon-sun-light.svg";
-    iconMoon.src = "./assets/images/icon-moon-light.svg";
+    defineIcons("dark");
     themeBg.style.backgroundImage = getBackgroundImage("dark");
   } else {
-    document?.documentElement.setAttribute("data-theme", "light");
-    localStorage.setItem("theme", "light");
-    currentTheme = "light";
-    toggleThemeButton.checked = false;
-    iconSun.src = "./assets/images/icon-sun-dark.svg";
-    iconMoon.src = "./assets/images/icon-moon-dark.svg";
+    console.log(currentTheme === "light" ? false : true);
+    defineIcons("light");
     themeBg.style.backgroundImage = getBackgroundImage("light");
   }
 }
 
+function changeTheme() {
+  if (currentTheme === "light") {
+    document?.documentElement.setAttribute("data-theme", "dark");
+    localStorage.setItem("theme", "dark");
+    currentTheme = "dark";
+    defineIcons("light");
+    themeBg.style.backgroundImage = getBackgroundImage("light");
+  } else {
+    document?.documentElement.setAttribute("data-theme", "light");
+    localStorage.setItem("theme", "light");
+    currentTheme = "light";
+    defineIcons("dark");
+    themeBg.style.backgroundImage = getBackgroundImage("dark");
+  }
+  localStorage.setItem("theme", currentTheme);
+}
+
 toggleThemeButton.addEventListener("click", () => {
-  toggleTheme();
+  changeTheme();
 });
 
-toggleTheme();
+initiateTheme();
