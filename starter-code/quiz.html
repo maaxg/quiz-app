@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/quiz.css" />
     <title>Quiz</title>
   </head>
-  <body class="theme-bg">
+  <body id="theme-bg" class="theme-bg">
     <header>
       <nav class="nav-container">
         <div class="header-left">
@@ -18,55 +18,72 @@
           <h3 id="quiz-title"></h3>
         </div>
         <div class="header-right">
-          <img src="./assets/images/icon-sun-dark.svg" />
+          <img id="sun" src="./assets/images/icon-sun-dark.svg" />
           <label class="switch">
-            <input type="checkbox" />
+            <input id="toggle-switch" type="checkbox" />
             <span class="slider round"></span>
           </label>
-          <img src="./assets/images/icon-moon-dark.svg" />
+          <img id="moon" src="./assets/images/icon-moon-dark.svg" />
         </div>
       </nav>
     </header>
     <main>
       <div id="question-container" class="quiz-container">
-        <div class="question-prompt-gap">
-          <p id="number-of-questions" class="body-m"></p>
-          <h3 id="prompt"></h3>
+        <div class="prompt-container">
+          <div class="question-prompt-gap">
+            <p id="number-of-questions" class="body-m"></p>
+            <h2 id="prompt"></h2>
+          </div>
+          <div class="progress-bar-container">
+            <div id="progress-bar" class="progress-bar"></div>
+          </div>
         </div>
-        <div class="progress-bar-container">
-          <div id="progress-bar" class="progress-bar"></div>
-        </div>
-
-        <ul id="options-container" class="options-container"></ul>
-
-        <button id="submit-answer" type="submit">
-          <h3 id="submit-answer-text">Submit answer</h3>
-        </button>
-        <div class="select-an-answer-container" id="select-an-answer">
-          <img src="./assets/images/icon-error.svg" />
-          <h3 style="color: var(--red)">Please select an answer</h3>
+        <div class="options-container">
+          <ul id="options-container" class="options-gap"></ul>
+          <div>
+            <button id="submit-answer" type="submit">
+              <h3 id="submit-answer-text">Submit answer</h3>
+            </button>
+            <div class="select-an-answer-container" id="select-an-answer">
+              <img src="./assets/images/icon-error.svg" />
+              <h3 style="color: var(--red)">Please select an answer</h3>
+            </div>
+          </div>
         </div>
       </div>
 
       <div id="quiz-result" class="quiz-container quiz-result">
-        <h2 class="thin">
+        <h1 class="regular">
           Quiz completed <br /><strong>You scored...</strong>
-        </h2>
-        <div class="quiz-score-card">
-          <div class="quiz-indicator">
-            <div id="quiz-icon-container" class="quiz-icon">
-              <img id="quiz-icon" />
+        </h1>
+        <div class="quiz-score-card-container">
+          <div class="quiz-score-card">
+            <div class="quiz-indicator">
+              <div id="quiz-icon-container" class="quiz-icon">
+                <img id="quiz-icon" />
+              </div>
+              <h3 id="quiz-title" style="color: var(--navy)"></h3>
             </div>
-            <h3 id="quiz-title"></h3>
+            <div
+              style="display: flex; align-items: center; flex-direction: column"
+            >
+              <h1 id="quiz-score" style="color: var(--navy)">1</h1>
+              <p
+                class="body-m"
+                id="quiz-score-out-of"
+                style="color: var(--grey-navy)"
+              >
+                out of 10
+              </p>
+            </div>
           </div>
-          <h1 id="quiz-score">1</h1>
-          <h3 id="quiz-score-out-of">out of 10</h3>
+          <button id="play-again" type="submit">
+            <h3>Play again</h3>
+          </button>
         </div>
-        <button id="play-again" type="submit">
-          <h3>Play again</h3>
-        </button>
       </div>
     </main>
     <script type="module" src="./js/quiz.js"></script>
+    <script src="./js/theme.js"></script>
   </body>
 </html>

@@ -26,12 +26,16 @@ function checkAnswer() {
     score++;
   } else {
     if (!button.classList.contains("wrong")) {
+      const iconResultContainer = document.createElement("div");
+      iconResultContainer.classList.add("icon-result-container");
       const wrongIcon = document.createElement("img");
       wrongIcon.src = "./assets/images/icon-error.svg";
       wrongIcon.id = "wrong-icon";
       wrongIcon.classList.add("wrong-icon");
       button.classList.add("wrong");
-      button.appendChild(wrongIcon);
+      iconResultContainer.appendChild(wrongIcon);
+      button.appendChild(iconResultContainer);
+
       wrongIcon.style.display = "block";
     }
     correctIcon.style.display = "block";
@@ -91,7 +95,7 @@ function drawProgressBar() {
 
 function onSelectOption(evt, answer, correctAnswerId, id, optionIndicatorId) {
   evt.preventDefault();
-  console.log(selectedAnswer);
+
   if (selectedAnswer.submited) return;
   const option = document.getElementById(id);
   const optionIndicator = document.getElementById(optionIndicatorId);
@@ -137,16 +141,20 @@ function drawOptions(questions) {
       correctOptionId = optionButton.id;
     }
 
+    const iconResultContainer = document.createElement("div");
+    iconResultContainer.classList.add("icon-result-container");
+
     const correctIcon = document.createElement("img");
     correctIcon.src = "./assets/images/icon-correct.svg";
     correctIcon.id = "correct-icon";
     correctIcon.classList.add("correct-icon");
+    iconResultContainer.appendChild(correctIcon);
 
     optionIndicator.appendChild(optionIndicatorText);
     optionButton.appendChild(optionIndicator);
     optionButton.appendChild(optionText);
 
-    if (correctAnswer === option) optionButton.appendChild(correctIcon);
+    if (correctAnswer === option) optionButton.appendChild(iconResultContainer);
 
     li.appendChild(optionButton);
 

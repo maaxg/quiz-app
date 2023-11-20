@@ -16,22 +16,26 @@
     <title>Quiz app</title>
   </head>
   <body>
-    <div class="theme-bg">
+    <div id="theme-bg" class="theme-bg">
       <header>
         <nav class="nav-container">
-          <img src="./assets/images/icon-sun-dark.svg" />
-          <label class="switch">
-            <input type="checkbox" />
-            <span class="slider round"></span>
-          </label>
-          <img src="./assets/images/icon-moon-dark.svg" />
+          <div class="header-right">
+            <img id="sun" src="./assets/images/icon-sun-dark.svg" />
+            <label class="switch">
+              <input id="toggle-switch" type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+            <img id="moon" src="./assets/images/icon-moon-dark.svg" />
+          </div>
         </nav>
       </header>
       <main>
         <div class="container">
-          <div>
-            <h2 class="thin">Welcome to the <strong>Frontend Quiz!</strong></h2>
-            <p class="body-m">Pick a subject to get started.</p>
+          <div class="align-home-title">
+            <h1 class="thin">
+              Welcome to the <br /><strong>Frontend Quiz!</strong>
+            </h1>
+            <p class="body-s">Pick a subject to get started.</p>
           </div>
           <ul class="subject-container">
             <li>
@@ -83,5 +87,6 @@
       </main>
     </div>
     <script src="./js/home.js"></script>
+    <script src="./js/theme.js"></script>
   </body>
 </html>

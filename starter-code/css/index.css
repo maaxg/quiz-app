@@ -7,9 +7,11 @@
   --light-blush: #abc1e1;
   --light-gray: #f4f6fa;
   --pure-white: #ffffff;
+  --bg: #f4f6fa;
   --green: #26d782;
   --red: #ee5454;
 }
+
 [data-theme="dark"] {
   --purple: rgb(167, 41, 245);
   --primary-color: #ffffff;
@@ -18,6 +20,7 @@
   --grey-navy: #626c7f;
   --light-blush: #abc1e1;
   --light-gray: #f4f6fa;
+  --bg: #3b4d66;
   --green: #26d782;
   --red: #ee5454;
 }
@@ -80,7 +83,7 @@ h1 {
   font-family: "Rubik", sans-serif;
   font-weight: 500;
   font-style: normal;
-  font-size: 4rem;
+  font-size: 40px;
   color: var(--primary-color);
 }
 
@@ -93,7 +96,7 @@ h2 {
   font-family: "Rubik", sans-serif;
   font-weight: 500;
   font-style: normal;
-  font-size: 2.25rem;
+  font-size: 20px;
   color: var(--primary-color);
 }
 
@@ -134,7 +137,7 @@ h3 {
 
 button {
   width: 100%;
-  height: 56px;
+  min-height: 56px;
   padding: 0.75rem;
   background-color: var(--purple);
   display: flex;
@@ -177,13 +180,13 @@ li button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   border-radius: 8px;
 }
 
 li button h3 {
-  color: var(--primary-color);
+  color: var(--navy);
 }
 
 li button:hover {
@@ -282,7 +285,40 @@ input:checked + .slider:before {
 
 /* Bg */
 .theme-bg {
-  background-color: var(--light-gray);
-  background-image: url("../assets/images/pattern-background-mobile-light.svg");
+  background-color: var(--bg);
+  background-image: url("../assets/images/pattern-background-mobile-dark.svg");
+  background-repeat: no-repeat;
   height: 100dvh;
+}
+
+.icon-theme {
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 64px;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  h3 {
+    font-size: 28px;
+  }
+  button {
+    min-height: 80px;
+  }
+  .answer-option {
+    min-width: 56px;
+    min-height: 56px;
+  }
+  li button {
+    display: flex;
+    flex: 1;
+    background-color: var(--pure-white);
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    column-gap: 16px;
+  }
 }
