@@ -30,7 +30,6 @@ function initiateTheme() {
     defineIcons("dark");
     themeBg.style.backgroundImage = getBackgroundImage("dark");
   } else {
-    console.log(currentTheme === "light" ? false : true);
     defineIcons("light");
     themeBg.style.backgroundImage = getBackgroundImage("light");
   }

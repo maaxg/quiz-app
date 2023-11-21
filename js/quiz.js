@@ -67,7 +67,7 @@ function getQuizTitle(title, icon) {
 }
 
 function getQuestions() {
-  fetch("/data.json")
+  fetch("data.json")
     .then(async (response) => {
       return response.json();
     })
@@ -177,7 +177,6 @@ function drawInformations(quizzes) {
     ? localQuiz
     : quizzes.find((quiz) => quiz.title === getSearch());
   if (!localQuiz.length) localQuiz = quiz;
-  console.log(localQuiz);
   if (quiz) {
     getQuizTitle(quiz.title, quiz.icon);
     drawQuestion(quiz.questions);
@@ -191,7 +190,6 @@ buttonSubmit.addEventListener("click", (evt) => {
   evt.preventDefault();
 
   if (selectedAnswer.submited) {
-    console.log(localQuiz, questionIndex);
     if (questionIndex < localQuiz.questions.length - 1) questionIndex++;
     else {
       finished = true;
@@ -229,5 +227,5 @@ buttonSubmit.addEventListener("click", (evt) => {
 
 playAgainButton.addEventListener("click", (evt) => {
   evt.preventDefault();
-  window.location.href = "/starter-code/index.html";
+  window.location.href = "index.html";
 });

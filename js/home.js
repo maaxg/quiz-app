@@ -5,7 +5,6 @@ const accessibilityButton = document.getElementById("accessibility");
 
 function onSelectQuiz(evt, quiz) {
   evt.preventDefault();
-  console.log(quiz);
   window.location.href = "quiz.html?quiz=" + quiz;
 }
 
