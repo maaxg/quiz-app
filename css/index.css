@@ -35,7 +35,7 @@
 
 @font-face {
   font-family: "Rubik";
-  src: url("/assets/fonts/static/Rubik-Italic.ttf") format("truetype");
+  src: url("../assets/fonts/static/Rubik-Italic.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
   text-align: left;
@@ -43,7 +43,7 @@
 
 @font-face {
   font-family: "Rubik";
-  src: url("/assets/fonts/static/Rubik-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/static/Rubik-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   text-align: left;
@@ -51,7 +51,7 @@
 
 @font-face {
   font-family: "Rubik";
-  src: url("/assets/fonts/static/Rubik-Medium.ttf") format("truetype");
+  src: url("../assets/fonts/static/Rubik-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   text-align: left;
@@ -283,7 +283,7 @@ input:checked + .slider:before {
 /* Bg */
 .theme-bg {
   background-color: var(--bg);
-  background-image: url("/assets/images/pattern-background-mobile-dark.svg");
+  background-image: url("../assets/images/pattern-background-mobile-dark.svg");
   background-repeat: no-repeat;
   height: 100dvh;
 }

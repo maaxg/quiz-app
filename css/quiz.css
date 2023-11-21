@@ -143,4 +143,10 @@
     justify-content: space-between;
     max-width: 50%;
   }
+  .options-gap {
+    row-gap: 32px;
+  }
+  #submit-answer {
+    margin-top: 32px;
+  }
 }
